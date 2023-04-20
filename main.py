@@ -1,11 +1,12 @@
 """
-Extracts metadata from video files and stores it in machine-readable form for the purpose of checking quality inconsistencies in a video archive.
+Extracts metadata from video files and stores it in machine-readable form
+for the purpose of checking quality inconsistencies in a video archive.
 
 TODO: store metadata in database? optional? would enable more functionalities
 
 Author: hemmer
-Date: 2023-02-23
-Version: 0.1
+Date: 2023-04-20
+Version: 0.2
 """
 
 import os  # for folder crawling
