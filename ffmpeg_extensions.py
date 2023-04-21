@@ -30,8 +30,8 @@ default_extensions = [
 ]
 
 # relevant file paths
-ffmpeg_default = r".\src\ffmpeg6\bin\ffmpeg.exe"
-ffmpeg = r".\src\ffmpeg6\bin\ffmpeg.exe"
+ffmpeg_default = r".\src\ffmpeg\bin\ffmpeg.exe"
+ffmpeg = r".\src\ffmpeg\bin\ffmpeg.exe"
 extensions_file = r"extensions.txt"
 
 
