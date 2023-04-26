@@ -67,8 +67,8 @@ def get_files(folder, supported_formats):
 
 def read_metadata(files, metadata_collection):
     """
-    TODO: implement ffmpeg.py probing
-    Gets metadata from a given list of files via ffmpeg.py.probe and stores it in a given list.
+    TODO: implement ffmpeg probing
+    Gets metadata from a given list of files via ffmpeg probe and stores it in a given list.
     
     :param files: List with paths of video files (eg: 'e:/archive/films/forest_gump.mkv')
     :param metadata_collection:
