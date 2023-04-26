@@ -9,7 +9,6 @@ Working:
 
 TODO:
  - ffmpeg class
- - try mediainfo and other alternatives
  - user interface
  - make separate list of non-video/non-supported files (may be relevant for the QA evaluation, old formats, external subs, etc)
 
