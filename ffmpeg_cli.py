@@ -1,11 +1,10 @@
 """
 Class to provide ffmpeg command line functions.
-
 """
 import subprocess
 
 
-class ffmpeg:
+class ffmpeg_cli:
     # relevant file paths
     ffmpeg_default = r".\src\ffmpeg\bin\ffmpeg.exe"
     ffmpeg = r".\src\ffmpeg\bin\ffmpeg.exe"
