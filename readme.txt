@@ -11,6 +11,7 @@ TODO:
  - ffmpeg class
  - user interface
  - make separate list of non-video/non-supported files (may be relevant for the QA evaluation, old formats, external subs, etc)
+ - store metadata in database for furter use and more functionality?
 
 Disclaimer:
 - this software uses code of http://ffmpeg.org licensed under the http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
