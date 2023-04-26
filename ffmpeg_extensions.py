@@ -1,9 +1,5 @@
 """
-Runs ffmpeg commands to get an up-to-date list of supported file format extensions.
-
-Author: hemmer
-Date: 2023-04-20
-Version: 0.4
+Runs ffmpeg.py commands to get an up-to-date list of supported file format extensions.
 """
 
 import subprocess  # to run external exe with arguments and get outputs
@@ -56,7 +52,7 @@ def use_default_extensions():
 
 
 def use_local_extensions():
-    """switch to extension list from currently used ffmpeg version"""
+    """switch to extension list from currently used ffmpeg.py version"""
     file = open(extensions_file, mode="w")
     local_extensions = get_single_file_formats()
 
@@ -64,11 +60,11 @@ def use_local_extensions():
         file.write(ext + "\n")
 
 
-# TODO: allow user to set ffmpeg.exe other than default shipped version
+# TODO: allow user to set ffmpeg.py.exe other than default shipped version
 # TODO: save user choice permanently somewhere (ini file?)
 # TODO: check if exists, otherwise use default and/or provide error
-# TODO: check if actually ffmpeg exe, for security reasons
-# TODO: don't use global, remove default-ffmpeg variable
+# TODO: check if actually ffmpeg.py exe, for security reasons
+# TODO: don't use global, remove default-ffmpeg.py variable
 def set_ffmpeg_path(filepath):
     global ffmpeg
     ffmpeg = filepath
