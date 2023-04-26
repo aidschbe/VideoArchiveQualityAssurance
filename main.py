@@ -1,12 +1,6 @@
 """
 Extracts metadata from video files and stores it in machine-readable form
 for the purpose of checking quality inconsistencies in a video archive.
-
-TODO: store metadata in database? optional? would enable more functionalities
-
-Author: hemmer
-Date: 2023-04-20
-Version: 0.2
 """
 
 import os  # for folder crawling
@@ -73,8 +67,8 @@ def get_files(folder, supported_formats):
 
 def read_metadata(files, metadata_collection):
     """
-    TODO: implement ffmpeg probing
-    Gets metadata from a given list of files via ffmpeg.probe and stores it in a given list.
+    TODO: implement ffmpeg.py probing
+    Gets metadata from a given list of files via ffmpeg.py.probe and stores it in a given list.
     
     :param files: List with paths of video files (eg: 'e:/archive/films/forest_gump.mkv')
     :param metadata_collection:
