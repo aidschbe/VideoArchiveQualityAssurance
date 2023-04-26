@@ -8,7 +8,6 @@ Working:
 -
 
 TODO:
- - ffmpeg class
  - user interface
  - make separate list of non-video/non-supported files (may be relevant for the QA evaluation, old formats, external subs, etc)
  - store metadata in database for furter use and more functionality?
