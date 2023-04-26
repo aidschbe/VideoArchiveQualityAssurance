@@ -2,7 +2,7 @@
 Runs ffmpeg commands to get an up-to-date list of supported file format extensions.
 """
 
-import subprocess  # to run external exe with arguments and get outputs
+from ffmpeg_cli import ffmpeg_cli
 
 # default list of supported video file formats
 # in case fetching current formats doesn't work and to ensure out of the box functionality
@@ -26,8 +26,6 @@ default_extensions = [
 ]
 
 # relevant file paths
-ffmpeg_default = r".\src\ffmpeg\bin\ffmpeg.exe"
-ffmpeg = r".\src\ffmpeg\bin\ffmpeg.exe"
 extensions_file = r"extensions.txt"
 
 
@@ -60,20 +58,11 @@ def use_local_extensions():
         file.write(ext + "\n")
 
 
-# TODO: allow user to set ffmpeg.exe other than default shipped version
-# TODO: save user choice permanently somewhere (ini file?)
-# TODO: check if exists, otherwise use default and/or provide error
-# TODO: check if actually ffmpeg exe, for security reasons
-# TODO: don't use global, remove default-ffmpeg variable
-def set_ffmpeg_path(filepath):
-    global ffmpeg
-    ffmpeg = filepath
-
-
 def get_demuxers():
+    ffmpeg = ffmpeg_cli()
     command = ' -hide_banner -demuxers'
 
-    output = subprocess.check_output(ffmpeg + command, shell=True).decode()
+    output = ffmpeg.check_output(command).decode()
 
     # split at line beginning, remove header
     output = output.split(" D ")[1:]
@@ -100,6 +89,7 @@ def clean_demuxer_list():
 
 
 def get_full_demux_info():
+    ffmpeg = ffmpeg_cli()
     demuxers = clean_demuxer_list()
 
     demuxer_list = list()
@@ -108,7 +98,7 @@ def get_full_demux_info():
         command = " -hide_banner -h demuxer={}".format(demuxer)
 
         demuxer_list.append(
-            subprocess.check_output(ffmpeg + command).decode()
+            ffmpeg.check_output(command).decode()
         )
 
     return demuxer_list
