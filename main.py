@@ -75,7 +75,7 @@ def read_metadata(files, metadata_collection):
     :return:
     """
     for file in files:
-        metadata = "TODO"
+        metadata = "TODO FFPROBE"
         metadata_collection.append(metadata)
 
 
