@@ -20,15 +20,19 @@ archive_metadata = list()
 
 
 def main():
+
+    # get folder containing videofiles (subfolders also work)
     folder = get_folder()
 
     # get extensions
     ffmpeg_extensions.use_local_extensions()
     formats = ffmpeg_extensions.load_extensions()
 
+    # get metadata from videofiles
     get_files(folder, formats)
     read_metadata(archive_files, archive_metadata)
 
+    # pretty print metadata for testing
     pretty.pprint(archive_metadata)
 
 
@@ -52,8 +56,8 @@ def get_files(folder, supported_formats):
     """
     Gets filepaths from all supported video files in a folder and its subfolders.
 
-    :param folder:
-    :param supported_formats:
+    :param folder: Path containing video archive.
+    :param supported_formats: List containing all supported file formats.
     :return:
     """
     for root, subdir, files in os.walk(folder):
