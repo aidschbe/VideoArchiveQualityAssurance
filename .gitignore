@@ -1,5 +1,5 @@
 # PROJECT SPECIFIC
-/src/
+/src/ffmpeg/*
 
 # TEMPLATE:
 # Byte-compiled / optimized / DLL files
