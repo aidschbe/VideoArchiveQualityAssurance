@@ -5,11 +5,10 @@ import subprocess
 
 
 class ffmpeg_cli:
-
     # exe file paths
     ffmpeg_folder = r".\src\ffmpeg"
-    ffmpeg = ffmpeg_folder+r"\bin\ffmpeg.exe"
-    ffprobe = ffmpeg_folder+r"\bin\ffprobe.exe"
+    ffmpeg = ffmpeg_folder + r"\bin\ffmpeg.exe"
+    ffprobe = ffmpeg_folder + r"\bin\ffprobe.exe"
 
     def check_output(self, command):
         """
@@ -20,8 +19,13 @@ class ffmpeg_cli:
         return subprocess.check_output(self.ffmpeg + command, shell=True)
 
     def probe(self, file):
-        command = r'-v error -hide_banner -print_format json -show_streams -show_format'
-        result = subprocess.check_output(self.ffprobe + command, shell=True)
+        """
+
+        :param file:
+        :return:
+        """
+        command = r'-v error -hide_banner -print_format json -show_streams -show_format '
+        result = subprocess.check_output(self.ffprobe + command + file, shell=True)
         return result
 
     # TODO: allow user to set ffmpeg_cli.py.exe other than default shipped version
