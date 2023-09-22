@@ -1,4 +1,4 @@
-Based on an old data model I made at university, this project is an attempt to create software that
+Based on an old data model I made at university, this exercise is an attempt to create software that
 finds all videofiles in a given directory (and its subdirectories), probes them for metadata
 and uses that metadata to look for qualitative shortcomings.
 (eg low resolution, old container format, missing data stream names, missing language tags, etc)
